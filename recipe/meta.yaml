@@ -34,6 +34,8 @@ requirements:
     - r-rprojroot
     - r-stringr >=1.2.0
     - r-yaml >=2.1.5
+    - xorg-libxrender 0.9.10
+    - xorg-libsm 1.2.2 
   run:
     - pandoc >=1.12.3
     - r-base
@@ -47,6 +49,7 @@ requirements:
     - r-stringr >=1.2.0
     - r-yaml >=2.1.5
     - xorg-libxrender 0.9.10
+    - xorg-libsm 1.2.2 
 
 test:
   commands:
