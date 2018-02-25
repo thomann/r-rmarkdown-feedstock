@@ -15,7 +15,7 @@ source:
   sha256: 8765875573a29622c822c6a6ab0c93afe418b49bf7aec0ba0dd3c55b7e81175d
 
 build:
-  number: 2
+  number: 3
   skip: true  # [win32]
 
   rpaths:
@@ -34,7 +34,9 @@ requirements:
     - r-rprojroot
     - r-stringr >=1.2.0
     - r-yaml >=2.1.5
-
+    - xorg-libxrender 0.9.*
+    - xorg-libsm 1.2.*
+    - xorg-libxext 1.3.*
   run:
     - pandoc >=1.12.3
     - r-base
@@ -47,11 +49,18 @@ requirements:
     - r-rprojroot
     - r-stringr >=1.2.0
     - r-yaml >=2.1.5
+    - xorg-libxrender 0.9.*
+    - xorg-libsm 1.2.* 
+    - xorg-libxext 1.3.*
+    - pandoc <2.0
 
 test:
   commands:
     - $R -e "library('rmarkdown')"  # [not win]
     - "\"%R%\" -e \"library('rmarkdown')\""  # [win]
+    - $R -e "x <- tempfile(fileext = '.Rmd'); file.create(x); rmarkdown::render(x)"  # [not win]
+    - "\"%R%\" -e \"x <- tempfile(fileext = '.Rmd'); file.create(x); rmarkdown::render(x)\""  # [win]
+
 
 about:
   home: http://rmarkdown.rstudio.com
