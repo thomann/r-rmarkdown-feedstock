@@ -57,6 +57,9 @@ test:
   commands:
     - $R -e "library('rmarkdown')"  # [not win]
     - "\"%R%\" -e \"library('rmarkdown')\""  # [win]
+    - $R -e "x <- tempfile(fileext = '.Rmd'); file.create(x); rmarkdown::render(x)"  # [not win]
+    - "\"%R%\" -e \"x <- tempfile(fileext = '.Rmd'); file.create(x); rmarkdown::render(x)\"" # [win]
+
 
 about:
   home: http://rmarkdown.rstudio.com
