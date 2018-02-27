@@ -34,7 +34,9 @@ requirements:
     - r-rprojroot
     - r-stringr >=1.2.0
     - r-yaml >=2.1.5
-
+    - xorg-libxrender 0.9.*
+    - pandoc >=2.0,<3.0
+    
   run:
     - r-base
     - r-base64enc
@@ -46,14 +48,18 @@ requirements:
     - r-rprojroot
     - r-stringr >=1.2.0
     - r-yaml >=2.1.5
+    - xorg-libxrender 0.9.*
+    - pandoc >=2.0,<3.0
 
 test:
   commands:
     - $R -e "library('rmarkdown')"  # [not win]
     - "\"%R%\" -e \"library('rmarkdown')\""  # [win]
+    - $R -e "x <- tempfile(fileext = '.Rmd'); file.create(x); rmarkdown::render(x)"  # [not win]
+    - "\"%R%\" -e \"x <- tempfile(fileext = '.Rmd'); file.create(x); rmarkdown::render(x)\""  # [win]
 
 about:
-  home: http
+  home: http://rmarkdown.rstudio.com
   license: GPL-3
   summary: Convert R Markdown documents into a variety of formats.
   license_family: GPL3
@@ -64,5 +70,7 @@ extra:
   recipe-maintainers:
     - johanneskoester
     - bgruening
+    - mdehollander
     - daler
     - jdblischak
+    - bsennblad
