@@ -15,10 +15,8 @@ source:
   sha256: e294b5d4dd6ea52471ba2ad151680fa05588f339d4d50393dbe6f6833a0e3e60
 
 build:
-  merge_build_host: True  # [win]
   number: 0
   skip: true  # [win32]
-  noarch: generic
 
   rpaths:
     - lib/R/lib/
@@ -26,8 +24,6 @@ build:
 
 requirements:
   build:
-
-  host:
     - r-base
     - r-base64enc
     - r-evaluate >=0.8
@@ -53,11 +49,11 @@ requirements:
 
 test:
   commands:
-    - $R -e "library('rmarkdown')"           # [not win]
+    - $R -e "library('rmarkdown')"  # [not win]
     - "\"%R%\" -e \"library('rmarkdown')\""  # [win]
 
 about:
-  home: http://rmarkdown.rstudio.com
+  home: http
   license: GPL-3
   summary: Convert R Markdown documents into a variety of formats.
   license_family: GPL3
@@ -70,4 +66,3 @@ extra:
     - bgruening
     - daler
     - jdblischak
-    - bsennblad
