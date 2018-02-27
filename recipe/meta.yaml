@@ -1,4 +1,4 @@
-{% set version = '1.6' %}
+{% set version = '1.8' %}
 
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
@@ -12,11 +12,13 @@ source:
   url:
     - https://cran.r-project.org/src/contrib/rmarkdown_{{ version }}.tar.gz
     - https://cran.r-project.org/src/contrib/Archive/rmarkdown/rmarkdown_{{ version }}.tar.gz
-  sha256: 8765875573a29622c822c6a6ab0c93afe418b49bf7aec0ba0dd3c55b7e81175d
+  sha256: e294b5d4dd6ea52471ba2ad151680fa05588f339d4d50393dbe6f6833a0e3e60
 
 build:
-  number: 3
+  merge_build_host: True  # [win]
+  number: 0
   skip: true  # [win32]
+  noarch: generic
 
   rpaths:
     - lib/R/lib/
@@ -24,53 +26,48 @@ build:
 
 requirements:
   build:
+
+  host:
     - r-base
     - r-base64enc
-    - r-catools
     - r-evaluate >=0.8
     - r-htmltools >=0.3.5
     - r-jsonlite
     - r-knitr >=1.14
+    - r-mime
     - r-rprojroot
     - r-stringr >=1.2.0
     - r-yaml >=2.1.5
-    - xorg-libxrender 0.9.*
-    - xorg-libsm 1.2.*
-    - xorg-libxext 1.3.*
+
   run:
-    - pandoc >=1.12.3
     - r-base
     - r-base64enc
-    - r-catools
     - r-evaluate >=0.8
     - r-htmltools >=0.3.5
     - r-jsonlite
     - r-knitr >=1.14
+    - r-mime
     - r-rprojroot
     - r-stringr >=1.2.0
     - r-yaml >=2.1.5
-    - xorg-libxrender 0.9.*
-    - xorg-libsm 1.2.* 
-    - xorg-libxext 1.3.*
-    - pandoc <2.0
 
 test:
   commands:
-    - $R -e "library('rmarkdown')"  # [not win]
+    - $R -e "library('rmarkdown')"           # [not win]
     - "\"%R%\" -e \"library('rmarkdown')\""  # [win]
-    - $R -e "x <- tempfile(fileext = '.Rmd'); file.create(x); rmarkdown::render(x)"  # [not win]
-    - "\"%R%\" -e \"x <- tempfile(fileext = '.Rmd'); file.create(x); rmarkdown::render(x)\""  # [win]
-
 
 about:
   home: http://rmarkdown.rstudio.com
   license: GPL-3
   summary: Convert R Markdown documents into a variety of formats.
   license_family: GPL3
+  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'  # [unix]
+  license_file: '{{ environ["PREFIX"] }}\R\share\licenses\GPL-3'  # [win]
 
 extra:
   recipe-maintainers:
     - johanneskoester
     - bgruening
-    - mdehollander
+    - daler
     - jdblischak
+    - bsennblad
