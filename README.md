@@ -14,14 +14,16 @@ Summary: Convert R Markdown documents into a variety of formats.
 Current build status
 ====================
 
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/r-rmarkdown-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/r-rmarkdown-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/r-rmarkdown-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/r-rmarkdown-feedstock)
-Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/r-rmarkdown-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/r-rmarkdown-feedstock/branch/master)
+[![Linux](https://img.shields.io/circleci/project/github/conda-forge/r-rmarkdown-feedstock/master.svg?label=Linux)](https://circleci.com/gh/conda-forge/r-rmarkdown-feedstock)
+[![OSX](https://img.shields.io/travis/conda-forge/r-rmarkdown-feedstock/master.svg?label=macOS)](https://travis-ci.org/conda-forge/r-rmarkdown-feedstock)
+[![Windows](https://img.shields.io/appveyor/ci/conda-forge/r-rmarkdown-feedstock/master.svg?label=Windows)](https://ci.appveyor.com/project/conda-forge/r-rmarkdown-feedstock/branch/master)
 
 Current release info
 ====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/r-rmarkdown/badges/version.svg)](https://anaconda.org/conda-forge/r-rmarkdown)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/r-rmarkdown/badges/downloads.svg)](https://anaconda.org/conda-forge/r-rmarkdown)
+
+| Name | Downloads | Version | Platforms |
+| --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-r--rmarkdown-green.svg)](https://anaconda.org/conda-forge/r-rmarkdown) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/r-rmarkdown.svg)](https://anaconda.org/conda-forge/r-rmarkdown) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/r-rmarkdown.svg)](https://anaconda.org/conda-forge/r-rmarkdown) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/r-rmarkdown.svg)](https://anaconda.org/conda-forge/r-rmarkdown) |
 
 Installing r-rmarkdown
 ======================
