@@ -29,7 +29,7 @@ requirements:
     - r-evaluate >=0.8
     - r-htmltools >=0.3.5
     - r-jsonlite
-    - r-knitr >=1.14
+    - r-knitr >=1.18
     - r-mime
     - r-rprojroot
     - r-stringr >=1.2.0
