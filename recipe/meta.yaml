@@ -1,4 +1,4 @@
-{% set version = '1.9' %}
+{% set version = "1.10" %}
 
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
@@ -12,7 +12,7 @@ source:
   url:
     - https://cran.r-project.org/src/contrib/rmarkdown_{{ version }}.tar.gz
     - https://cran.r-project.org/src/contrib/Archive/rmarkdown/rmarkdown_{{ version }}.tar.gz
-  sha256: cbb7da80b514c148b48b8d4b6d497ec8edf6d2f6be3c483c836eec99e19a0673
+  sha256: 39350e4d689d633089c1dc1e51dd04bef4497422818c98c17ff77094e6700256
 
 build:
   number: 0
