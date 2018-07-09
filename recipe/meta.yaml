@@ -1,5 +1,4 @@
-{% set version = '1.9' %}
-
+{% set version = '1.10' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +9,12 @@ package:
 source:
   fn: rmarkdown_{{ version }}.tar.gz
   url:
-    - https://cran.r-project.org/src/contrib/rmarkdown_{{ version }}.tar.gz
-    - https://cran.r-project.org/src/contrib/Archive/rmarkdown/rmarkdown_{{ version }}.tar.gz
-  sha256: cbb7da80b514c148b48b8d4b6d497ec8edf6d2f6be3c483c836eec99e19a0673
+    - {{ cran_mirror }}/src/contrib/rmarkdown_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/Archive/rmarkdown/rmarkdown_{{ version }}.tar.gz
+  sha256: 39350e4d689d633089c1dc1e51dd04bef4497422818c98c17ff77094e6700256
 
 build:
+  merge_build_host: True  # [win]
   number: 0
   skip: true  # [win32]
 
@@ -24,6 +24,8 @@ build:
 
 requirements:
   build:
+
+  host:
     - r-base
     - r-base64enc
     - r-evaluate >=0.8
@@ -33,6 +35,7 @@ requirements:
     - r-mime
     - r-rprojroot
     - r-stringr >=1.2.0
+    - r-tinytex >=0.3
     - r-yaml >=2.1.5
     - xorg-libxrender 0.9.*
     - xorg-libsm 1.2.* 
@@ -43,10 +46,11 @@ requirements:
     - r-evaluate >=0.8
     - r-htmltools >=0.3.5
     - r-jsonlite
-    - r-knitr >=1.14
+    - r-knitr >=1.18
     - r-mime
     - r-rprojroot
     - r-stringr >=1.2.0
+    - r-tinytex >=0.3
     - r-yaml >=2.1.5
     - xorg-libxrender 0.9.*
     - xorg-libsm 1.2.* 
@@ -61,7 +65,7 @@ test:
     - "\"%R%\" -e \"x <- tempfile(fileext = '.Rmd'); file.create(x); rmarkdown::render(x)\""  # [win]
 
 about:
-  home: http://rmarkdown.rstudio.com
+  home: https://rmarkdown.rstudio.com, https://github.com/rstudio/rmarkdown
   license: GPL-3
   summary: Convert R Markdown documents into a variety of formats.
   license_family: GPL3
@@ -76,3 +80,4 @@ extra:
     - daler
     - jdblischak
     - bsennblad
+    - cbrueffer
