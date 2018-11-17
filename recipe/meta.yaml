@@ -14,9 +14,9 @@ source:
   sha256: 39350e4d689d633089c1dc1e51dd04bef4497422818c98c17ff77094e6700256
 
 build:
+  noarch: generic
   merge_build_host: True  # [win]
-  number: 1
-  skip: true  # [win32]
+  number: 1001
   rpaths:
     - lib/R/lib/
     - lib/
@@ -68,8 +68,7 @@ about:
   license: GPL-3
   summary: Convert R Markdown documents into a variety of formats.
   license_family: GPL3
-  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'  # [unix]
-  license_file: '{{ environ["PREFIX"] }}\R\share\licenses\GPL-3'  # [win]
+  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'
 
 extra:
   recipe-maintainers:
