@@ -1,4 +1,4 @@
-{% set version = '1.10' %}
+{% set version = '1.11' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -11,19 +11,18 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/rmarkdown_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/rmarkdown/rmarkdown_{{ version }}.tar.gz
-  sha256: 39350e4d689d633089c1dc1e51dd04bef4497422818c98c17ff77094e6700256
+  sha256: e9cca9b6989cf23c7a3219475f7b3d319c674128e8d335e5fdb8d590105cd27b
 
 build:
   noarch: generic
   merge_build_host: True  # [win]
-  number: 1001
+  number: 1000
   rpaths:
     - lib/R/lib/
     - lib/
 
 requirements:
   build:
-    - {{posix}}zip               # [win]
   host:
     - r-base
     - r-base64enc
@@ -35,7 +34,7 @@ requirements:
     - r-rprojroot
     - r-stringr >=1.2.0
     - r-tinytex >=0.3
-    - r-yaml >=2.1.5
+    - r-yaml >=2.1.19
     - xorg-libxrender 0.9.*
     - xorg-libsm 1.2.* 
     - xorg-libxext 1.3.*
@@ -50,7 +49,7 @@ requirements:
     - r-rprojroot
     - r-stringr >=1.2.0
     - r-tinytex >=0.3
-    - r-yaml >=2.1.5
+    - r-yaml >=2.1.19
     - xorg-libxrender 0.9.*
     - xorg-libsm 1.2.* 
     - xorg-libxext 1.3.*    
