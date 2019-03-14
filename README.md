@@ -5,7 +5,7 @@
 About r-rmarkdown
 =================
 
-Home: https://rmarkdown.rstudio.com, https://github.com/rstudio/rmarkdown
+Home: https://rmarkdown.rstudio.com
 
 Package license: GPL-3
 
@@ -113,12 +113,7 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
-* [@bgruening](https://github.com/bgruening/)
 * [@bsennblad](https://github.com/bsennblad/)
-* [@cbrueffer](https://github.com/cbrueffer/)
-* [@daler](https://github.com/daler/)
-* [@dbast](https://github.com/dbast/)
-* [@jdblischak](https://github.com/jdblischak/)
-* [@johanneskoester](https://github.com/johanneskoester/)
+* [@conda-forge/r](https://github.com/conda-forge/r/)
 * [@mdehollander](https://github.com/mdehollander/)
 
