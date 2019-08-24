@@ -1,7 +1,7 @@
 About r-rmarkdown
 =================
 
-Home: https://rmarkdown.rstudio.com
+Home: https://github.com/rstudio/rmarkdown
 
 Package license: GPL-3
 
