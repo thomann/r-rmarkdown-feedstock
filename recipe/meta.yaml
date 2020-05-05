@@ -53,12 +53,12 @@ test:
   commands:
     - $R -e "library('rmarkdown')"           # [not win]
     - "\"%R%\" -e \"library('rmarkdown')\""  # [win]
-    - $R -e "x <- tempfile(fileext = '.Rmd'); file.create(x); rmarkdown::render(x)"  # [not win]
+    - $R -e "x <- tempfile(fileext = '.Rmd'); file.create(x); knitr::opts_chunk$set(dev = "svg"); rmarkdown::render(x)"  # [not win]
     - "\"%R%\" -e \"x <- tempfile(fileext = '.Rmd'); file.create(x); rmarkdown::render(x)\""  # [win]
 
 about:
   home: https://github.com/rstudio/rmarkdown
-  license: GPL-3
+  license: GPL-3.0-only
   summary: Convert R Markdown documents into a variety of formats.
   license_family: GPL3
   license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'
