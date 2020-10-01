@@ -5,7 +5,7 @@ Home: https://github.com/rstudio/rmarkdown
 
 Package license: GPL-3.0-only
 
-Feedstock license: BSD 3-Clause
+Feedstock license: BSD-3-Clause
 
 Summary: Convert R Markdown documents into a variety of formats.
 
