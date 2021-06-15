@@ -1,4 +1,4 @@
-{% set version = "2.8" %}
+{% set version = "2.9" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/rmarkdown_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/rmarkdown/rmarkdown_{{ version }}.tar.gz
-  sha256: 3fdf67ca065992527fbf7c37c664f558a61be75e95a0510c017477972c2a6562
+  sha256: 6ce5af8b9a7c282619f74d3999d27ec4de12d3f93cde8fd12cc4c19f02ea8668
 
 build:
   merge_build_host: true  # [win]
