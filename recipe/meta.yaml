@@ -30,10 +30,9 @@ requirements:
     - r-htmltools >=0.3.5
     - r-jsonlite
     - r-knitr >=1.22
-    - r-mime
     - r-stringr >=1.2.0
-    - r-tinytex >=0.11
-    - r-xfun
+    - r-tinytex >=0.31
+    - r-xfun >=0.21
     - r-yaml >=2.1.19
   run:
     - r-base
@@ -42,10 +41,9 @@ requirements:
     - r-htmltools >=0.3.5
     - r-jsonlite
     - r-knitr >=1.22
-    - r-mime
     - r-stringr >=1.2.0
-    - r-tinytex >=0.11
-    - r-xfun
+    - r-tinytex >=0.31
+    - r-xfun >=0.21
     - r-yaml >=2.1.19
     - pandoc >=1.12.3,<3.0
 
